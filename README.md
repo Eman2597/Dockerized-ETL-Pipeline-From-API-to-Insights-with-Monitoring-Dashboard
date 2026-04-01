@@ -56,15 +56,20 @@ This project is a **production-ready, containerized ETL pipeline** that automate
   * PostgreSQL (Data Warehouse)
 
 ---
+### 📊 4. Generated Visualizations
 
-### 📊 4. Visualization
+The pipeline generates the following insights:
+
+* **Average Age by Role** (Bar Chart)
+* **Average Age by Gender** (Bar Chart)
+* **User Count per Gender** (Count Plot)
+* **Top 10 Cities with Most Users** (Bar Chart)
+* **Height Distribution** (Histogram with KDE)
+* **Weight Distribution** (Histogram with KDE)
+* **Age vs. Height Correlation** (Scatter Plot)
+* **Age vs. Weight Correlation** (Scatter Plot)
 
 * Generate multiple plots:
-
-  * Age distribution
-  * Gender analysis
-  * Top cities
-  * Correlations
 * Saved in:
 
 ```
@@ -79,15 +84,15 @@ The pipeline is fully monitored using:
 
 * Prometheus → collects metrics
 * Grafana → dashboards 
-![📊Dashborad](./assets/grafana.png)
+
 
 ### 📈 Metrics:
 
 * `etl_processing_seconds` → execution time
 * `etl_users_total` → processed users
 
----
 
+---
 ## 🐳 Docker Environment
 
 The entire system runs using **Docker Compose**, including:
@@ -97,6 +102,7 @@ The entire system runs using **Docker Compose**, including:
 * Prometheus
 * Grafana
 
+
 ---
 
 ## ▶️ How to Run
@@ -104,8 +110,11 @@ The entire system runs using **Docker Compose**, including:
 ### 1️⃣ Clone repo
 
 ```
-git clone https://github.com/YOUR_USERNAME/etl-data-pipeline.git
-cd etl-data-pipeline
+# Clone the repository
+git clone https://github.com/Eman2597/Dockerized-ETL-Pipeline-From-API-to-Insights-with-Monitoring-Dashboard.git
+
+# Navigate to project folder
+cd Dockerized-ETL-Pipeline-From-API-to-Insights-with-Monitoring-Dashboard
 ```
 
 ---
@@ -113,16 +122,26 @@ cd etl-data-pipeline
 ### 2️⃣ Run project
 
 ```
-docker-compose up --build
+# Build and run all services
+docker-compose up --build -d
 ```
 
 ---
 
-### 3️⃣ Access services
+## 3️⃣ Access Services
 
-* 📊 Grafana → http://localhost:3000
-* 📡 Prometheus → http://localhost:9090
+Since the project is hosted on a Virtual Machine, you can access the monitoring and data tools from your host browser using the following URLs:
 
+| Service              | Protocol | URL                                | Default Credentials |
+| -------------------- | -------- | ---------------------------------- | ------------------- |
+| 📊 Grafana Dashboard | HTTP     | http://192.168.56.101:3000         | admin / admin       |
+| 📡 Prometheus        | HTTP     | http://192.168.56.101:9090         | Public / No Auth    |
+| 🐍 App Metrics       | HTTP     | http://192.168.56.101:8000/metrics | Public / No Auth    |
+| 🐘 PostgreSQL        | TCP/IP   | 192.168.56.101:5432                | etl_user / etl_pass |
+
+
+---
+![📊Dashborad](./assets/grafana.png)
 ---
 
 ## 📂 Project Structure
@@ -174,7 +193,8 @@ docker-compose up --build
 ## 👩‍💻 Author
 
 **Eman Abdelmohsen Elbordeny**
-Data Engineer
 
-🔗 LinkedIn: [PUT YOUR LINK]
-🔗 GitHub: [PUT YOUR LINK]
+*Data Engineer | Data Enthusiast*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eman-elbordeny-2511e997/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Eman2597)
