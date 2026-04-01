@@ -1,0 +1,7 @@
+sqlalchemy
+psycopg2-binary
+prometheus_client
+pandas
+requests
+seaborn
+matplotlib

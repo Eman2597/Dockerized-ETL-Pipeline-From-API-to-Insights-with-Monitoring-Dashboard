@@ -1,0 +1,34 @@
+{
+  "dashboard": {
+    "title": "ETL Pipeline Monitoring",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "Total Users Processed",
+        "targets": [
+          {
+            "expr": "etl_users_total"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "ETL Execution Time",
+        "targets": [
+          {
+            "expr": "etl_processing_seconds_sum"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Processing Rate",
+        "targets": [
+          {
+            "expr": "rate(etl_users_total[1m])"
+          }
+        ]
+      }
+    ]
+  }
+}
